@@ -1,6 +1,6 @@
-DROP table poi;
+--DROP TABLE poi;
 
-CREATE TABLE poi
+CREATE TABLE IF NOT EXISTS poi
 (
   id serial NOT NULL,
   coordenadax integer NOT NULL CHECK (coordenadax >= 0),

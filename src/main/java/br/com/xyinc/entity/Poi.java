@@ -79,7 +79,7 @@ public class Poi {
 		}
 		return false;
 	}
-	
+
 	public boolean isValid() {
 		if (this.getCoordenadaX() >= 0 && this.getCoordenadaY() >= 0) {
 			return true;
@@ -90,16 +90,9 @@ public class Poi {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Poi [id=");
-		builder.append(id);
-		builder.append(", nome=");
-		builder.append(nome);
-		builder.append(", coordenadaX=");
-		builder.append(coordenadaX);
-		builder.append(", coordenadaY=");
-		builder.append(coordenadaY);
-		builder.append("]");
+		builder.append("Poi [id=").append(id).append(", nome=").append(nome).append(", coordenadaX=")
+				.append(coordenadaX).append(", coordenadaY=").append(coordenadaY).append("]");
 		return builder.toString();
 	}
-
+	
 }

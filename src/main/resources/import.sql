@@ -1,4 +1,4 @@
-DROP DATABASE xyinc;
+--DROP DATABASE xyinc;
 
 CREATE DATABASE xyinc
   WITH OWNER = postgres
