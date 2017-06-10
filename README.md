@@ -1,6 +1,6 @@
-# Projeto XY Inc
+# Projeto XY INC
 
-Projeto desenvolvido para auxiliar na localização de Pontos de Interesse.
+Desenvolvido para auxiliar na localização de Pontos de Interesse.
 
 ## Instalações ##
 O projeto possui as seguintes dependências:
