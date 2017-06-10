@@ -11,19 +11,26 @@ import javax.persistence.Id;
 
 @Entity
 public class Poi {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String nome;
-	
+
 	private Integer coordenadaX;
-	
+
 	private Integer coordenadaY;
-	
+
 	public Poi() {
-		
+
+	}
+
+	public Poi(String nome, Integer coordenadaX, Integer coordenadaY) {
+		super();
+		this.nome = nome;
+		this.coordenadaX = coordenadaX;
+		this.coordenadaY = coordenadaY;
 	}
 
 	public Poi(Integer id, String nome, Integer coordenadaX, Integer coordenadaY) {
@@ -33,7 +40,7 @@ public class Poi {
 		this.coordenadaX = coordenadaX;
 		this.coordenadaY = coordenadaY;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -64,6 +71,20 @@ public class Poi {
 
 	public void setCoordenadaY(Integer coordenadaY) {
 		this.coordenadaY = coordenadaY;
+	}
+
+	public boolean isEmpty() {
+		if (this.nome == null || this.coordenadaX == null || this.coordenadaY == null) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isValid() {
+		if (this.getCoordenadaX() >= 0 && this.getCoordenadaY() >= 0) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override

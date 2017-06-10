@@ -10,7 +10,7 @@ public class ErrorHandle {
 
 	private static final Logger log = LoggerFactory.getLogger(ErrorHandle.class);
 	
-	public static ResponseEntity<String> createHandler(String message, HttpStatus status) {
+	public ResponseEntity<String> createHandler(String message, HttpStatus status) {
 		log.error(message);
 		return new ResponseEntity<String>(new ErrorMessage(status.toString(), message).toString(), status);
 	}
