@@ -25,6 +25,8 @@ Os demais arquivos listados abaixo, são arquivos de criação da base de dados.
 ```
 ## Compilação do Projeto ##
 
+acessar o banco de dados Postgres e criar um database com nome ``xyinc``.
+
 Executar o seguinte comando dentro da pasta do projeto (\xy-inc) para efetuar o build da aplicação. Este comando irá baixar as dependências do `` pom.xml ``, executar os testes automáticos e irá gerar um arquivo JAR no diretório `` \xy-inc\target ``.
 ```
  mvn clean package
