@@ -52,7 +52,7 @@ Segue os seguintes exemplos para utilização dos serviços REST
      GET em http://localhost:8080/poi
      ``
 * Salvar novo Ponto de Interesse: 
-     ````
+     ```
        POST em http://localhost:8080/poi (enviar JSON via Body)
        Examplo de requisição HTTP:
        POST /poi HTTP/1.1
@@ -66,9 +66,9 @@ Segue os seguintes exemplos para utilização dos serviços REST
         "coordenadaX": 15,
         "coordenadaY": 6
       }
-     ````
+     ```
 * Atualizar Ponto de interesse: 
-     ````
+     ```
        PUT em http://localhost:8080/poi (enviar JSON via Body)
        Examplo de requisição HTTP:
        PUT /poi HTTP/1.1
@@ -83,7 +83,7 @@ Segue os seguintes exemplos para utilização dos serviços REST
         "coordenadaX": 15,
         "coordenadaY": 12
       }
-      ````
+      ```
 * Buscar Ponto de interesse: 
      ``
      GET em http://localhost:8080/poi/{id} retorna um JSON caso o ID exista 
@@ -93,10 +93,11 @@ Segue os seguintes exemplos para utilização dos serviços REST
       DELETE em http://localhost:8080/poi/{id} deleta pelo ID passado na URL
     ``
 * Buscar Pontos de interesse passando coordenadas X e Y e distancia máxima:
-    ````
-      GET em http://localhost:8080/poi/search?x=20&y=10&dMax=10 (os parametros passados são apenas um exemplo) 
+    ```
+      GET em http://localhost:8080/poi/search?x=20&y=10&dMax=10 
+      (os parametros passados são apenas um exemplo) 
       Enviar via parametro x, y e dMax
-    ````
+    ```
 
 
 
