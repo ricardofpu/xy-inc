@@ -17,13 +17,15 @@ Após a instalação das dependências, inicie baixando o projeto executando o s
 ```
 Dentro do diretório `` xy-inc\src\main\resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
-Os demais arquivos listados abaixo, são arquivos de criação da base de dados. Estes arquivos serão usados automaticamente na inicialização da aplicação.
+Os demais arquivos listados abaixo, são arquivos de criação da base de dados.
 ```
    data.sql ( insert da base inicial )
    import.sql ( create do banco de dados )
    schema.sql ( create da tabela )
 ```
 ## Compilação do Projeto ##
+
+Acessar o banco de dados Postgres e criar um database com nome ``xyinc``. ( Após o build da aplicação a tabela e os inserts serão executados automaticamente).
 
 Executar o seguinte comando dentro da pasta do projeto (\xy-inc) para efetuar o build da aplicação. Este comando irá baixar as dependências do `` pom.xml ``, executar os testes automáticos e irá gerar um arquivo JAR no diretório `` \xy-inc\target ``.
 ```
