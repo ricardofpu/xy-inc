@@ -54,7 +54,7 @@ Segue os seguintes exemplos para utilização dos serviços REST
 * Salvar novo Ponto de Interesse: 
      ```
        POST em http://localhost:8080/poi (enviar JSON via Body)
-       Examplo de requisição HTTP:
+       Exemplo de requisição HTTP:
        POST /poi HTTP/1.1
        Host: localhost:8080
        Content-Type: application/json
@@ -70,7 +70,7 @@ Segue os seguintes exemplos para utilização dos serviços REST
 * Atualizar Ponto de interesse: 
      ```
        PUT em http://localhost:8080/poi (enviar JSON via Body)
-       Examplo de requisição HTTP:
+       Exemplo de requisição HTTP:
        PUT /poi HTTP/1.1
        Host: localhost:8080
        Content-Type: application/json
@@ -83,7 +83,7 @@ Segue os seguintes exemplos para utilização dos serviços REST
         "coordenadaX": 15,
         "coordenadaY": 12
       }
-      ```
+     ```
 * Buscar Ponto de interesse: 
      ``
      GET em http://localhost:8080/poi/{id} retorna um JSON caso o ID exista 
