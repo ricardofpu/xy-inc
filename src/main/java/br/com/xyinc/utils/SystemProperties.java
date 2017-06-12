@@ -7,6 +7,6 @@ public class SystemProperties {
 	public static final String MSG_ERROR_NULL = "Nenhum valor pode ser nulo.";
 	public static final String MSG_ERROR_NOME_NULL = "Campo 'NOME' não pode ser vazio.";
 	public static final String MSG_SAVED = "Registro salvo com sucesso.";
-	public static final String MSG_UPDATED = "Registro atualizado com sucesso!";
+	public static final String MSG_UPDATED = "Registro atualizado com sucesso.";
 
 }
