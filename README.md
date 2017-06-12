@@ -13,15 +13,15 @@ O projeto possui as seguintes dependências:
 
 Após a instalação das dependências, inicie baixando o projeto executando o seguinte comando:
 
-  git clone https://github.com/ricardofpu/xy-inc.git
+ * git clone https://github.com/ricardofpu/xy-inc.git
   
 Dentro do diretório xy-inc\src\main\resources, o arquivo application.properties define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
 Os demais arquivos listados abaixo, são arquivos de criação da base de dados. Estes arquivos serão usados automaticamente na inicialização da aplicação.
 
-  data.sql ( insert da base inicial )
-  import.sql ( create do banco de dados )
-  schema.sql ( create da tabela )
+  * data.sql ( insert da base inicial )
+  * import.sql ( create do banco de dados )
+  * schema.sql ( create da tabela )
 
 ## Compilação do Projeto ##
 
@@ -37,5 +37,49 @@ Acesse a pasta do projeto e execute o seguinte comando para iniciar a aplicaçã
  
 Este comando irá realizar o build da aplicação e iniciar o servidor Tomcat. A aplicação ficará disponível na seguinte URL:
 
- * http://localhost:8080/
+  [http://localhost:8080/]
+ 
+Outra opção para iniciar a aplicação e executar o seguinte comando dentro do diretório ..\xy-inc\target :
+
+  * java -jar xy-inc-1.0.0.jar
+
+## Utilização do Serviço REST ##
+
+Segue os seguintes exemplos para utilização dos serviços REST
+
+* Listar todos os Pontos de Interesse: GET em [http://localhost:8080/poi]
+* Salvar novo Ponto de Interesse: POST em [http://localhost:8080/poi] enviar JSON via Body
+Examplo de requisição HTTP:
+  POST /poi HTTP/1.1
+  Host: localhost:8080
+  Content-Type: application/json
+  Cache-Control: no-cache
+  Postman-Token: 01bfb377-9742-1281-267b-402ebb1d3432
+  
+  {
+    "nome": "Padaria",
+    "coordenadaX": 15,
+    "coordenadaY": 6
+  }
+* Atualizar Ponto de interesse: PUT em [http://localhost:8080/poi] enviar JSON via Body
+Examplo de requisição HTTP:
+PUT /poi HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Cache-Control: no-cache
+Postman-Token: 29847fa5-2719-803e-974e-f4dab73ac857
+
+{
+  "id": 3,
+  "nome": "Joalheria",
+  "coordenadaX": 15,
+  "coordenadaY": 12
+}
+* Buscar Ponto de interesse: GET em [http://localhost:8080/poi/{id}] retorna um JSON caso o ID exista
+* Deletar Ponto de interesse: DELETE em [http://localhost:8080/poi/{id}] deleta pelo ID passado na URL
+* Buscar Pontos de interesse passando coordenadas X e Y e distancia máxima:
+  * [http://localhost:8080/poi/search?x=20&y=10&dMax=10 (os parametros passados são apenas um exemplo)
+  
+
+
 
