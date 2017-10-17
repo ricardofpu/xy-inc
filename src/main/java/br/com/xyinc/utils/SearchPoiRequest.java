@@ -2,23 +2,19 @@ package br.com.xyinc.utils;
 
 import br.com.xyinc.command.handler.commands.Commands;
 import br.com.xyinc.domain.Coordinate;
-import br.com.xyinc.domain.Id;
 import br.com.xyinc.domain.Name;
+import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 
-public class UpdatePoiRequest {
+public class SearchPoiRequest {
 
-    private String name;
+    @Required
     private Integer coordinateX;
+    @Required
     private Integer coordinateY;
+    @Required
+    private Double dMax;
 
-    public UpdatePoiRequest(){}
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public SearchPoiRequest() {
     }
 
     public Integer getCoordinateX() {
@@ -37,12 +33,19 @@ public class UpdatePoiRequest {
         this.coordinateY = coordinateY;
     }
 
-    public Commands.UpdatePoi toCommand(String id) {
-        return new Commands.UpdatePoi(
-                new Id(id),
-                new Name(this.name),
-                new Coordinate(this.coordinateX),
-                new Coordinate(this.coordinateY)
+    public Double getdMax() {
+        return dMax;
+    }
+
+    public void setdMax(Double dMax) {
+        this.dMax = dMax;
+    }
+
+    public Commands.SearchPoi toCommand() {
+        return new Commands.SearchPoi(
+                this.coordinateX,
+                this.coordinateY,
+                this.dMax
         );
     }
 }

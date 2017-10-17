@@ -33,37 +33,6 @@ public class Poi {
         this.coordinateY = coordinateY;
     }
 
-    public Id getId() {
-        return id;
-    }
-
-    public void setId(Id id) {
-        this.id = id;
-    }
-
-    public Name getName() {
-        return name;
-    }
-
-    public void setName(Name name) {
-        this.name = name;
-    }
-
-    public Coordinate getCoordinateX() {
-        return coordinateX;
-    }
-
-    public void setCoordinateX(Coordinate coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
-    public Coordinate getCoordinateY() {
-        return coordinateY;
-    }
-
-    public void setCoordinateY(Coordinate coordinateY) {
-        this.coordinateY = coordinateY;
-    }
 
     public boolean isEmpty() {
         if (this.name == null || this.coordinateX == null || this.coordinateY == null) {
@@ -101,5 +70,40 @@ public class Poi {
         this.coordinateY = command.getCoordinateY();
 
         repository.update(this);
+    }
+
+    public void delete(IRepository repository) {
+    }
+
+    public Id getId() {
+        return id;
+    }
+
+    public void setId(Id id) {
+        this.id = id;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public Coordinate getCoordinateX() {
+        return coordinateX;
+    }
+
+    public void setCoordinateX(Coordinate coordinateX) {
+        this.coordinateX = coordinateX;
+    }
+
+    public Coordinate getCoordinateY() {
+        return coordinateY;
+    }
+
+    public void setCoordinateY(Coordinate coordinateY) {
+        this.coordinateY = coordinateY;
     }
 }

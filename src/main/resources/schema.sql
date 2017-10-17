@@ -1,12 +1,12 @@
-DROP TABLE IF EXISTS poi;
-
-CREATE TABLE poi
+CREATE TABLE IF NOT EXISTS poi
 (
   id text NOT NULL,
-  coordenadax integer NOT NULL CHECK (coordenadax >= 0),
-  coordenaday integer NOT NULL CHECK (coordenaday >= 0),
   name character varying(255) NOT NULL,
-  CONSTRAINT poi_pkey PRIMARY KEY (id)
+  coordinate_x integer NOT NULL CHECK (coordinate_x >= 0),
+  coordinate_y integer NOT NULL CHECK (coordinate_y >= 0),
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
+  CONSTRAINT pk PRIMARY KEY (id)
 )
 WITH (
   OIDS=FALSE

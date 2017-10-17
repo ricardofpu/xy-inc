@@ -11,7 +11,7 @@ public class Commands {
 
     public static class GetPoi {
 
-        protected Id id;
+        private Id id;
 
         public GetPoi(Id id) {
             this.id = id;
@@ -28,9 +28,9 @@ public class Commands {
 
     public static class CreatePoi {
 
-        protected Name name;
-        protected Coordinate coordinateX;
-        protected Coordinate coordinateY;
+        private Name name;
+        private Coordinate coordinateX;
+        private Coordinate coordinateY;
 
         public CreatePoi(Name name, Coordinate coordinateX, Coordinate coordinateY) {
             this.name = name;
@@ -50,25 +50,17 @@ public class Commands {
             return coordinateX;
         }
 
-        public void setCoordinateX(Coordinate coordinateX) {
-            this.coordinateX = coordinateX;
-        }
-
         public Coordinate getCoordinateY() {
             return coordinateY;
-        }
-
-        public void setCoordinateY(Coordinate coordinateY) {
-            this.coordinateY = coordinateY;
         }
     }
 
     public static class UpdatePoi {
 
-        protected Id id;
-        protected Name name;
-        protected Coordinate coordinateX;
-        protected Coordinate coordinateY;
+        private Id id;
+        private Name name;
+        private Coordinate coordinateX;
+        private Coordinate coordinateY;
 
         public UpdatePoi(Id id, Name name, Coordinate coordinateX, Coordinate coordinateY) {
             this.id = id;
@@ -97,16 +89,47 @@ public class Commands {
             return coordinateX;
         }
 
-        public void setCoordinateX(Coordinate coordinateX) {
-            this.coordinateX = coordinateX;
-        }
-
         public Coordinate getCoordinateY() {
             return coordinateY;
         }
+    }
 
-        public void setCoordinateY(Coordinate coordinateY) {
+    public static class DeletePoi {
+
+        private Id id;
+
+        public DeletePoi(Id id) {
+            this.id = id;
+        }
+
+        public Id getId() {
+            return id;
+        }
+
+    }
+
+    public static class SearchPoi {
+
+        private Integer coordinateX;
+        private Integer coordinateY;
+        private Double dMax;
+
+        public SearchPoi(Integer coordinateX, Integer coordinateY, Double dMax) {
+            this.coordinateX = coordinateX;
             this.coordinateY = coordinateY;
+            this.dMax = dMax;
+        }
+
+        public Integer getCoordinateX() {
+            return coordinateX;
+        }
+
+        public Integer getCoordinateY() {
+            return coordinateY;
+        }
+
+        public Double getdMax() {
+            return dMax;
         }
     }
 }
