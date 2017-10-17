@@ -16,8 +16,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
@@ -28,13 +30,11 @@ public class PoiController {
     @Autowired
     private PoiCommandHandler commandHandler;
 
-    private static final Logger log = LoggerFactory.getLogger(PoiController.class);
-
     @GetMapping
-    public List<Poi> getAll() {
+    public ResponseEntity getAll() {
         Commands.GetAllPoi command = new Commands.GetAllPoi();
-
-        return commandHandler.handler(command);
+        List<Poi> result = commandHandler.handler(command);
+        return new ResponseEntity(result.stream().map(p -> p.toRepresentation()).collect(Collectors.toList()), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,7 +73,7 @@ public class PoiCommandHandler {
     }
 
     private Poi getPoi(Id id) {
-        return Optional.ofNullable(repository.find(id)).orElseThrow(EmptyStackException::new);
+        return Optional.ofNullable(repository.find(id)).orElse(null);
     }
 
 }
