@@ -6,11 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="xy-inc" />
+        <module name="xy-inc-application" />
+        <module name="xy-inc-domain" />
+        <module name="xy-inc-repository" />
+        <module name="xy-inc-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="xy-inc" target="1.8" />
+      <module name="xy-inc-application" target="1.8" />
+      <module name="xy-inc-domain" target="1.8" />
+      <module name="xy-inc-repository" target="1.8" />
+      <module name="xy-inc-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
