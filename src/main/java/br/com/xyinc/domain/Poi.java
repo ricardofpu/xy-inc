@@ -1,98 +1,105 @@
-package br.com.xyinc.entity;
+package br.com.xyinc.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import br.com.xyinc.command.handler.commands.Commands;
+import br.com.xyinc.domain.repository.IRepository;
+import br.com.xyinc.utils.PoiRepresentation;
 
-/*
- * Classe responsável por representar a entidade POI(Ponto de Interesse)
- */
-
-@Entity
 public class Poi {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    private Id id;
 
-	private String nome;
+    private Name name;
 
-	private Integer coordenadaX;
+    private Coordinate coordinateX;
 
-	private Integer coordenadaY;
+    private Coordinate coordinateY;
 
-	public Poi() {
+    public Poi() {
+    }
 
-	}
+    public Poi(Name name, Coordinate coordinateX, Coordinate coordinateY) {
+        super();
+        this.id = new Id();
+        this.name = name;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+    }
 
-	public Poi(String nome, Integer coordenadaX, Integer coordenadaY) {
-		super();
-		this.nome = nome;
-		this.coordenadaX = coordenadaX;
-		this.coordenadaY = coordenadaY;
-	}
+    public Poi(Id id, Name name, Coordinate coordinateX, Coordinate coordinateY) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+    }
 
-	public Poi(Integer id, String nome, Integer coordenadaX, Integer coordenadaY) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.coordenadaX = coordenadaX;
-		this.coordenadaY = coordenadaY;
-	}
+    public Id getId() {
+        return id;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public void setId(Id id) {
+        this.id = id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Name getName() {
+        return name;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public void setName(Name name) {
+        this.name = name;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Coordinate getCoordinateX() {
+        return coordinateX;
+    }
 
-	public Integer getCoordenadaX() {
-		return coordenadaX;
-	}
+    public void setCoordinateX(Coordinate coordinateX) {
+        this.coordinateX = coordinateX;
+    }
 
-	public void setCoordenadaX(Integer coordenadaX) {
-		this.coordenadaX = coordenadaX;
-	}
+    public Coordinate getCoordinateY() {
+        return coordinateY;
+    }
 
-	public Integer getCoordenadaY() {
-		return coordenadaY;
-	}
+    public void setCoordinateY(Coordinate coordinateY) {
+        this.coordinateY = coordinateY;
+    }
 
-	public void setCoordenadaY(Integer coordenadaY) {
-		this.coordenadaY = coordenadaY;
-	}
+    public boolean isEmpty() {
+        if (this.name == null || this.coordinateX == null || this.coordinateY == null) {
+            return true;
+        }
+        return false;
+    }
 
-	public boolean isEmpty() {
-		if (this.nome == null || this.coordenadaX == null || this.coordenadaY == null) {
-			return true;
-		}
-		return false;
-	}
+    public boolean isValid() {
+        if (this.getCoordinateX().getValue() >= 0 && this.getCoordinateY().getValue() >= 0) {
+            return true;
+        }
+        return false;
+    }
 
-	public boolean isValid() {
-		if (this.getCoordenadaX() >= 0 && this.getCoordenadaY() >= 0) {
-			return true;
-		}
-		return false;
-	}
+    public PoiRepresentation toRepresentation() {
+        return new PoiRepresentation(this.id.getValue(), this.name.getValue(), this.coordinateX.getValue(), this.coordinateY.getValue());
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Poi [id=").append(id).append(", nome=").append(nome).append(", coordenadaX=")
-				.append(coordenadaX).append(", coordenadaY=").append(coordenadaY).append("]");
-		return builder.toString();
-	}
-	
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Poi [id=").append(id.getValue()).append(", name=").append(name.getValue()).append(", coordinateX=")
+                .append(coordinateX.getValue()).append(", coordinateY=").append(coordinateY.getValue()).append("]");
+        return builder.toString();
+    }
+
+    public void save(IRepository repository) {
+        repository.save(this);
+    }
+
+    public void update(Commands.UpdatePoi command, IRepository repository) {
+        this.name = command.getName();
+        this.coordinateX = command.getCoordinateX();
+        this.coordinateY = command.getCoordinateY();
+
+        repository.update(this);
+    }
 }

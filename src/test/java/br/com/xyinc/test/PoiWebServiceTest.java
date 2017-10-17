@@ -29,7 +29,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.xyinc.entity.Poi;
+import br.com.xyinc.domain.Poi;
 import br.com.xyinc.utils.ResponseMessage;
 import br.com.xyinc.web.rest.PoiWebService;
 

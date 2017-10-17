@@ -25,7 +25,7 @@ Os demais arquivos listados abaixo, são arquivos de criação da base de dados.
 ```
 ## Compilação do Projeto ##
 
-Acessar o banco de dados Postgres e criar um database com nome ``xyinc``. ( Após o build da aplicação a tabela e os inserts serão executados automaticamente).
+Acessar o banco de dados Postgres e criar um database com name ``xyinc``. ( Após o build da aplicação a tabela e os inserts serão executados automaticamente).
 
 Executar o seguinte comando dentro da pasta do projeto (\xy-inc) para efetuar o build da aplicação. Este comando irá baixar as dependências do `` pom.xml ``, executar os testes automáticos e irá gerar um arquivo JAR no diretório `` \xy-inc\target ``.
 ```
@@ -64,9 +64,9 @@ Segue os seguintes exemplos para utilização dos serviços REST
        Postman-Token: 01bfb377-9742-1281-267b-402ebb1d3432
 
       {
-        "nome": "Padaria",
-        "coordenadaX": 15,
-        "coordenadaY": 6
+        "name": "Padaria",
+        "coordinateX": 15,
+        "coordinateY": 6
       }
      ```
 * Atualizar Ponto de interesse: 
@@ -81,9 +81,9 @@ Segue os seguintes exemplos para utilização dos serviços REST
 
       {
         "id": 3,
-        "nome": "Joalheria",
-        "coordenadaX": 15,
-        "coordenadaY": 12
+        "name": "Joalheria",
+        "coordinateX": 15,
+        "coordinateY": 12
       }
      ```
 * Buscar Ponto de interesse: 
