@@ -1,12 +1,10 @@
 package br.com.xy.inc.domain;
 
-import javax.validation.Valid;
-
 public class Name {
 
     private String value;
 
-    public Name(@Valid String value) {
+    public Name(String value) {
         this.value = value;
     }
 

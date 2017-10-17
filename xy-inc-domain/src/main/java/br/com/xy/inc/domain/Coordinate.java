@@ -1,12 +1,10 @@
 package br.com.xy.inc.domain;
 
-import javax.validation.Valid;
-
 public class Coordinate {
 
     private Integer value;
 
-    public Coordinate(@Valid Integer value) {
+    public Coordinate(Integer value) {
         this.value = value;
     }
 

@@ -1,6 +1,5 @@
 package br.com.xy.inc.domain;
 
-import javax.validation.Valid;
 import java.util.UUID;
 
 public class Id {
@@ -11,7 +10,7 @@ public class Id {
         this.value = UUID.randomUUID().toString();
     }
 
-    public Id(@Valid String value) {
+    public Id(String value) {
         this.value = value;
     }
 
