@@ -17,8 +17,12 @@ public class PoiCommandHandler {
 
     private Logger LOG = LogManager.getLogger(this.getClass());
 
+    private final IRepository repository;
+
     @Autowired
-    private IRepository repository;
+    public PoiCommandHandler(IRepository repository) {
+        this.repository = repository;
+    }
 
 
     public List<Poi> handler(Commands.GetAllPoi command) {
