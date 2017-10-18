@@ -1,6 +1,5 @@
 package br.com.xy.inc.web.controller;
 
-import br.com.xy.inc.application.commands.Commands;
 import br.com.xy.inc.application.handler.PoiCommandHandler;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
@@ -16,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static br.com.xy.inc.application.commands.Commands.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 @RestController
@@ -27,14 +27,14 @@ public class PoiController {
 
     @GetMapping
     public ResponseEntity<List<PoiRepresentation>> getAll() {
-        Commands.GetAllPoi command = new Commands.GetAllPoi();
+        GetAllPoi command = new GetAllPoi();
         List<Poi> result = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(result), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<PoiRepresentation> get(@PathVariable("id") String id) {
-        Commands.GetPoi command = new Commands.GetPoi(new Id(id));
+        GetPoi command = new GetPoi(new Id(id));
 
         return Optional.ofNullable(commandHandler.handler(command))
                 .map(result -> new ResponseEntity<>(toRepresentation(result), HttpStatus.OK))
@@ -43,7 +43,7 @@ public class PoiController {
 
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<PoiRepresentation> createPoi(@RequestBody CreatePoiRequest request) {
-        Commands.CreatePoi command = request.toCommand();
+        CreatePoi command = request.toCommand();
         Poi poi = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(poi), HttpStatus.CREATED);
     }
@@ -52,7 +52,7 @@ public class PoiController {
     public ResponseEntity<List<PoiRepresentation>> search(@RequestParam(value = "coordinateX") String coordinateX,
                                                           @RequestParam(value = "coordinateY") String coordinateY,
                                                           @RequestParam(value = "dMax") String dMax) {
-        Commands.SearchPoi command = new Commands.SearchPoi(Integer.parseInt(coordinateX), Integer.parseInt(coordinateY),
+        SearchPoi command = new SearchPoi(Integer.parseInt(coordinateX), Integer.parseInt(coordinateY),
                 Double.parseDouble(dMax));
         List<Poi> pois = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(pois), HttpStatus.OK);
@@ -60,14 +60,14 @@ public class PoiController {
 
     @PutMapping(value = "/{id}", consumes = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<PoiRepresentation> updatePoi(@PathVariable("id") String id, @RequestBody UpdatePoiRequest request) {
-        Commands.UpdatePoi command = request.toCommand(id);
+        UpdatePoi command = request.toCommand(id);
         Poi poi = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(poi), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable("id") String id) {
-        Commands.DeletePoi command = new Commands.DeletePoi(new Id(id));
+        DeletePoi command = new DeletePoi(new Id(id));
         commandHandler.handler(command);
         return new ResponseEntity(HttpStatus.OK);
     }
