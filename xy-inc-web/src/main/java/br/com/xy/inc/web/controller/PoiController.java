@@ -6,14 +6,12 @@ import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
 import br.com.xy.inc.web.representation.PoiRepresentation;
 import br.com.xy.inc.web.request.CreatePoiRequest;
-import br.com.xy.inc.web.request.SearchPoiRequest;
 import br.com.xy.inc.web.request.UpdatePoiRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -31,7 +29,7 @@ public class PoiController {
     public ResponseEntity<List<PoiRepresentation>> getAll() {
         Commands.GetAllPoi command = new Commands.GetAllPoi();
         List<Poi> result = commandHandler.handler(command);
-        return new ResponseEntity<>(result.stream().map(this::toRepresentation).collect(Collectors.toList()), HttpStatus.OK);
+        return new ResponseEntity<>(toRepresentation(result), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -51,10 +49,13 @@ public class PoiController {
     }
 
     @GetMapping(value = "/search")
-    public ResponseEntity<List<Poi>> search(@RequestBody @Valid SearchPoiRequest request) {
-        Commands.SearchPoi command = request.toCommand();
+    public ResponseEntity<List<PoiRepresentation>> search(@RequestParam(value = "coordinateX") String coordinateX,
+                                                          @RequestParam(value = "coordinateY") String coordinateY,
+                                                          @RequestParam(value = "dMax") String dMax) {
+        Commands.SearchPoi command = new Commands.SearchPoi(Integer.parseInt(coordinateX), Integer.parseInt(coordinateY),
+                Double.parseDouble(dMax));
         List<Poi> pois = commandHandler.handler(command);
-        return new ResponseEntity<>(pois, HttpStatus.OK);
+        return new ResponseEntity<>(toRepresentation(pois), HttpStatus.OK);
     }
 
     @PutMapping(value = "/{id}", consumes = APPLICATION_JSON_UTF8_VALUE)
@@ -73,6 +74,10 @@ public class PoiController {
 
     private PoiRepresentation toRepresentation(Poi poi) {
         return new PoiRepresentation(poi.getId().getValue(), poi.getName().getValue(), poi.getCoordinateX().getValue(), poi.getCoordinateY().getValue());
+    }
+
+    private List<PoiRepresentation> toRepresentation(List<Poi> pois) {
+        return pois.stream().map(this::toRepresentation).collect(Collectors.toList());
     }
 
 }

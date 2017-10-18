@@ -4,6 +4,7 @@ import br.com.xy.inc.application.commands.Commands;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
 import br.com.xy.inc.domain.repository.IRepository;
+import br.com.xy.inc.infrastructure.exception.NotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class PoiCommandHandler {
 
         Poi poi = new Poi(command.getName(), command.getCoordinateX(), command.getCoordinateY());
 
-        poi.save(repository);
+        poi.create(repository);
 
         LOG.debug("Created poi in data base with id: {}", poi.getId().getValue());
         return poi;
@@ -73,11 +74,16 @@ public class PoiCommandHandler {
     }
 
     public List<Poi> handler(Commands.SearchPoi command) {
-        return null;
+        LOG.debug("Received command to find poi by between coordinates in data base with values: [{}]", command);
+
+        List<Poi> list = repository.findByBetweenCoordinate(command.getCoordinateX(), command.getCoordinateY(), command.getdMax());
+
+        LOG.debug("Search poi's completed in data base with values: {}", list);
+        return list;
     }
 
     private Poi getPoi(Id id) {
-        return Optional.ofNullable(repository.find(id)).orElse(null);
+        return Optional.ofNullable(repository.find(id)).orElseThrow(NotFoundException::new);
     }
 
 }

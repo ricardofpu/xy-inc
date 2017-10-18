@@ -5,15 +5,11 @@ import br.com.xy.inc.domain.repository.IRepository;
 public class Poi {
 
     private Id id;
-
     private Name name;
-
     private Coordinate coordinateX;
-
     private Coordinate coordinateY;
 
-    public Poi() {
-    }
+    public Poi() {}
 
     public Poi(Name name, Coordinate coordinateX, Coordinate coordinateY) {
         super();
@@ -29,6 +25,33 @@ public class Poi {
         this.name = name;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
+    }
+
+    public void create(IRepository repository) {
+        this.validatePoi(repository);
+
+        repository.save(this);
+    }
+
+    public void update(Name name, Coordinate coordinateX, Coordinate coordinateY, IRepository repository) {
+        this.validateUpdate();
+
+        this.name = name;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+
+        repository.update(this);
+    }
+
+    public void delete(IRepository repository) {
+        Integer updated = repository.delete(this.id);
+        if(updated != 1) {
+            try {
+                throw new Exception();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public Id getId() {
@@ -63,29 +86,32 @@ public class Poi {
         this.coordinateY = coordinateY;
     }
 
-
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return this.name == null || this.coordinateX == null || this.coordinateY == null;
     }
 
-    public boolean isValid() {
+    private boolean isValid() {
         return this.getCoordinateX().getValue() >= 0 && this.getCoordinateY().getValue() >= 0;
     }
 
-    public void save(IRepository repository) {
-        repository.save(this);
+
+    private void validatePoi(IRepository repository) {
+        try {
+            if(repository.find(id) != null) throw new Exception();
+            if(isEmpty()) throw new Exception();
+            if(!isValid()) throw new Exception();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void update(Name name, Coordinate coordinateX, Coordinate coordinateY, IRepository repository) {
-        this.name = name;
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-
-        repository.update(this);
+    private void validateUpdate() {
+        try {
+            if(isEmpty()) throw new Exception();
+            if(!isValid()) throw new Exception();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-    public void delete(IRepository repository) {
-    }
-
 
 }

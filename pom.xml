@@ -22,6 +22,7 @@
         <module>xy-inc-web</module>
         <module>xy-inc-application</module>
         <module>xy-inc-repository</module>
+        <module>xy-inc-infrastructure</module>
     </modules>
 
     <properties>
@@ -48,6 +49,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>xy-inc-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>xy-inc-domain</artifactId>

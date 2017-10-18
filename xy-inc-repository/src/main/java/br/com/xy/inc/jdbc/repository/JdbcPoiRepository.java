@@ -52,7 +52,7 @@ public class JdbcPoiRepository implements IRepository {
         Poi poi = null;
         try {
             poi = jdbcTemplate.queryForObject(sql, new PoiMapper(), id.getValue());
-        } catch (EmptyResultDataAccessException e) {
+        } catch (EmptyResultDataAccessException ignored) {
         }
 
         return poi;
