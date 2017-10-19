@@ -1,6 +1,5 @@
 package br.com.xy.inc.application.handler;
 
-import br.com.xy.inc.application.commands.Commands;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
 import br.com.xy.inc.domain.repository.IRepository;
@@ -11,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+
+import static br.com.xy.inc.application.commands.Commands.*;
 
 @Component
 public class PoiCommandHandler {
@@ -25,12 +26,12 @@ public class PoiCommandHandler {
     }
 
 
-    public List<Poi> handler(Commands.GetAllPoi command) {
+    public List<Poi> handler(GetAllPoi command) {
         LOG.debug("Received command to find all poi's: {}", command);
         return repository.findAll();
     }
 
-    public Poi handler(Commands.GetPoi command) {
+    public Poi handler(GetPoi command) {
         LOG.debug("Received command to find a poi in data base with id: {}", command.getId().getValue());
 
         Poi poi = getPoi(command.getId());
@@ -39,7 +40,7 @@ public class PoiCommandHandler {
         return poi;
     }
 
-    public Poi handler(Commands.CreatePoi command) {
+    public Poi handler(CreatePoi command) {
         LOG.debug("Received command to create a poi in data base with values: [{}]", command);
 
         Poi poi = new Poi(command.getName(), command.getCoordinateX(), command.getCoordinateY());
@@ -50,7 +51,7 @@ public class PoiCommandHandler {
         return poi;
     }
 
-    public Poi handler(Commands.UpdatePoi command) {
+    public Poi handler(UpdatePoi command) {
         LOG.debug("Received command to update a poi in data base with values: [{}]", command);
 
         Poi poi = getPoi(command.getId());
@@ -61,7 +62,7 @@ public class PoiCommandHandler {
         return poi;
     }
 
-    public void handler(Commands.DeletePoi command) {
+    public void handler(DeletePoi command) {
         LOG.debug("Received command to delete a poi in data base with id: {}", command.getId().getValue());
 
         Poi poi = getPoi(command.getId());
@@ -72,7 +73,7 @@ public class PoiCommandHandler {
 
     }
 
-    public List<Poi> handler(Commands.SearchPoi command) {
+    public List<Poi> handler(SearchPoi command) {
         LOG.debug("Received command to find poi by between coordinates in data base with values: [{}]", command);
 
         List<Poi> list = repository.findByBetweenCoordinate(command.getCoordinateX(), command.getCoordinateY(), command.getdMax());

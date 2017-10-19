@@ -3,7 +3,6 @@ package br.com.xy.inc.web.controller;
 import br.com.xy.inc.application.handler.PoiCommandHandler;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
-import br.com.xy.inc.web.exception.NotFoundException;
 import br.com.xy.inc.web.representation.PoiRepresentation;
 import br.com.xy.inc.web.request.CreatePoiRequest;
 import br.com.xy.inc.web.request.UpdatePoiRequest;
@@ -37,13 +36,9 @@ public class PoiController {
     public ResponseEntity<PoiRepresentation> get(@PathVariable("id") String id) {
         GetPoi command = new GetPoi(new Id(id));
 
-        Poi poi = commandHandler.handler(command);
-        if(poi == null) throw new NotFoundException(id);
-        return new ResponseEntity<>(toRepresentation(poi), HttpStatus.OK);
-
-//        return Optional.ofNullable(commandHandler.handler(command))
-//                .map(result -> new ResponseEntity<>(toRepresentation(result), HttpStatus.OK))
-//                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return Optional.ofNullable(commandHandler.handler(command))
+                .map(result -> new ResponseEntity<>(toRepresentation(result), HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)

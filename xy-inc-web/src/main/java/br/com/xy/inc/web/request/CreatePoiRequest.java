@@ -13,6 +13,12 @@ public class CreatePoiRequest {
     public CreatePoiRequest() {
     }
 
+    public CreatePoiRequest(String name, Integer coordinateX, Integer coordinateY) {
+        this.name = name;
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
+    }
+
     public String getName() {
         return name;
     }

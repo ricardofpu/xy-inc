@@ -15,4 +15,8 @@ public class Coordinate {
     public void setValue(Integer value) {
         this.value = value;
     }
+
+    public boolean verifyValue() {
+        return this.value == null;
+    }
 }

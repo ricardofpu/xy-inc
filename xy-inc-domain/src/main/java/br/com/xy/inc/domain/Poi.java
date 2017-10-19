@@ -9,7 +9,8 @@ public class Poi {
     private Coordinate coordinateX;
     private Coordinate coordinateY;
 
-    public Poi() {}
+    public Poi() {
+    }
 
     public Poi(Name name, Coordinate coordinateX, Coordinate coordinateY) {
         super();
@@ -34,22 +35,21 @@ public class Poi {
     }
 
     public void update(Name name, Coordinate coordinateX, Coordinate coordinateY, IRepository repository) {
-        this.validateUpdate();
-
         this.name = name;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
+        this.validateUpdate();
 
         repository.update(this);
     }
 
     public void delete(IRepository repository) {
         Integer updated = repository.delete(this.id);
-        if(updated != 1) {
+        if (updated != 1) {
             try {
                 throw new Exception();
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException();
             }
         }
     }
@@ -87,7 +87,8 @@ public class Poi {
     }
 
     private boolean isEmpty() {
-        return this.name == null || this.coordinateX == null || this.coordinateY == null;
+        return this.name == null || this.name.verifyValue() || this.coordinateX == null || this.coordinateX.verifyValue() ||
+                this.coordinateY == null || this.coordinateY.verifyValue();
     }
 
     private boolean isValid() {
@@ -97,20 +98,20 @@ public class Poi {
 
     private void validatePoi(IRepository repository) {
         try {
-            if(repository.find(id) != null) throw new Exception();
-            if(isEmpty()) throw new Exception();
-            if(!isValid()) throw new Exception();
+            if (repository.find(id) != null) throw new Exception();
+            if (isEmpty()) throw new Exception();
+            if (!isValid()) throw new Exception();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 
     private void validateUpdate() {
         try {
-            if(isEmpty()) throw new Exception();
-            if(!isValid()) throw new Exception();
+            if (isEmpty()) throw new Exception();
+            if (!isValid()) throw new Exception();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 

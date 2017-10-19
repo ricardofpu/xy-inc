@@ -15,4 +15,8 @@ public class Name {
     public void setValue(String value) {
         this.value = value;
     }
+
+    public boolean verifyValue() {
+        return this.value == null;
+    }
 }
