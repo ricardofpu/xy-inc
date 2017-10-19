@@ -1,6 +1,7 @@
-package br.com.xy.inc.infrastructure.exception.error;
+package br.com.xy.inc.web.exception.handler;
 
-import br.com.xy.inc.infrastructure.exception.NotFoundException;
+import br.com.xy.inc.web.exception.NotFoundException;
+import br.com.xy.inc.web.exception.error.ExceptionResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.nio.file.AccessDeniedException;
 
 @ControllerAdvice
-public class RestEntityExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    public RestEntityExceptionHandler(){
+    public GlobalExceptionHandler() {
 
     }
     // 400
@@ -47,7 +48,7 @@ public class RestEntityExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     // 403
-    @ExceptionHandler({ AccessDeniedException.class })
+    @ExceptionHandler({AccessDeniedException.class})
     public ResponseEntity<Object> handleAccessDeniedException(final Exception ex, final WebRequest request) {
         System.out.println("request" + request.getUserPrincipal());
         return new ResponseEntity<Object>("Access denied message here", new HttpHeaders(), HttpStatus.FORBIDDEN);
@@ -55,10 +56,12 @@ public class RestEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     // 404
 
-    @ExceptionHandler(value = { NotFoundException.class })
+    @ExceptionHandler({NotFoundException.class})
     protected ResponseEntity<Object> handleNotFound(final RuntimeException ex, final WebRequest request) {
-        final String bodyOfResponse = "This should be application specific";
-        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+        ExceptionResponse response = new ExceptionResponse();
+        response.setErrorCode("Not Found");
+        response.setErrorMessage(ex.getMessage());
+        return handleExceptionInternal(ex, response, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 
     // 409
@@ -73,8 +76,8 @@ public class RestEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     // 500
 
-    @ExceptionHandler({ NullPointerException.class, IllegalArgumentException.class, IllegalStateException.class })
-    /*500*/public ResponseEntity<Object> handleInternal(final RuntimeException ex, final WebRequest request) {
+    @ExceptionHandler({NullPointerException.class, IllegalArgumentException.class, IllegalStateException.class})
+    /*500*/ public ResponseEntity<Object> handleInternal(final RuntimeException ex, final WebRequest request) {
         logger.error("500 Status Code", ex);
         final String bodyOfResponse = "This should be application specific";
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
