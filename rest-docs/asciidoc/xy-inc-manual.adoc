@@ -1,0 +1,52 @@
+= XY Inc
+:example-caption!:
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 5
+
+[[poi]]
+= Points of Interest
+
+This is a manual for documentation of services the Poi(Points of Interest)
+
+
+== Poi
+
+This is a manual for documentation of services the poi
+
+
+=== Create
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/create-poi-success/http-request.adoc[]
+
+Request fields:
+include::{snippets}/xy-inc-web/target/generated-snippets/create-poi-success/request-fields.adoc[]
+
+Response success:
+include::{snippets}/xy-inc-web/target/generated-snippets/create-poi-success/http-response.adoc[]
+
+=== Update
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/http-request.adoc[]
+
+Path parameters:
+include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/path-parameters.adoc[]
+
+Request fields:
+include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/request-fields.adoc[]
+
+Response success:
+include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/http-response.adoc[]
+
+=== Delete
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/delete-poi-success/http-request.adoc[]
+
+Path parameters:
+include::{snippets}/xy-inc-web/target/generated-snippets/delete-poi-success/path-parameters.adoc[]
+
+Response success:
+include::{snippets}/xy-inc-web/target/generated-snippets/delete-poi-success/http-response.adoc[]
