@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/xy-inc.iml" filepath="$PROJECT_DIR$/xy-inc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xy-inc-application/xy-inc-application.iml" filepath="$PROJECT_DIR$/xy-inc-application/xy-inc-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xy-inc-domain/xy-inc-domain.iml" filepath="$PROJECT_DIR$/xy-inc-domain/xy-inc-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xy-inc-infrastructure/xy-inc-infrastructure.iml" filepath="$PROJECT_DIR$/xy-inc-infrastructure/xy-inc-infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xy-inc-repository/xy-inc-repository.iml" filepath="$PROJECT_DIR$/xy-inc-repository/xy-inc-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xy-inc-web/xy-inc-web.iml" filepath="$PROJECT_DIR$/xy-inc-web/xy-inc-web.iml" />
+    </modules>
+  </component>
+</project>

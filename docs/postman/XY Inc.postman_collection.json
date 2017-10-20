@@ -1,0 +1,262 @@
+{
+	"id": "7af4007e-0547-2787-1979-7d8558eee276",
+	"name": "XY Inc",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "1 - Creating",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"order": [
+				"dd441de1-0abe-58ef-7da1-c95ff738b74e",
+				"78a850d9-ada4-8f9b-f8d4-4caa5fd26353"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "30ec7423-4c9e-7173-f301-917ce901d467"
+		},
+		{
+			"name": "2 - Finishing",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"order": [
+				"5689444f-26df-9304-96fd-5a45232dc87a"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "3a0b0ea0-f384-92e5-e5d2-c46bedac4f49"
+		},
+		{
+			"name": "2 - Query",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"order": [
+				"8c7e83b8-6b32-d7fc-69b1-87995ef2a4dd",
+				"40fe2cb8-5a3c-ee02-1254-e2a263025c70",
+				"0e5b3eb8-109c-af0d-e8fb-15ff3180fc83"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "0d46e447-a3df-21e7-637d-f4678fd0172d"
+		}
+	],
+	"folders_order": [
+		"30ec7423-4c9e-7173-f301-917ce901d467",
+		"0d46e447-a3df-21e7-637d-f4678fd0172d",
+		"3a0b0ea0-f384-92e5-e5d2-c46bedac4f49"
+	],
+	"timestamp": 1508255397316,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0e5b3eb8-109c-af0d-e8fb-15ff3180fc83",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}/poi/search?coordinateX=10&coordinateY=5&dMax=10",
+			"folder": "0d46e447-a3df-21e7-637d-f4678fd0172d",
+			"queryParams": [
+				{
+					"key": "coordinateX",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "coordinateY",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "dMax",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508358844033,
+			"name": "[POI] - find between coordinates",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"responses": []
+		},
+		{
+			"id": "40fe2cb8-5a3c-ee02-1254-e2a263025c70",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}/poi",
+			"folder": "0d46e447-a3df-21e7-637d-f4678fd0172d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508260426754,
+			"name": "[POI] - find all",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"responses": []
+		},
+		{
+			"id": "5689444f-26df-9304-96fd-5a45232dc87a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}/poi/{{poiId}}",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"data": null,
+			"dataMode": "params",
+			"name": "[POI] - delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1508445303382,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "3a0b0ea0-f384-92e5-e5d2-c46bedac4f49"
+		},
+		{
+			"id": "78a850d9-ada4-8f9b-f8d4-4caa5fd26353",
+			"headers": "Content-Type: application/json\n//x-organization-slug: {{organization-slug}}\n//x-application-id: {{application-id}}\n//x-application-key: {{gw-app-key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{host}}/poi/{{poiId}}",
+			"folder": "30ec7423-4c9e-7173-f301-917ce901d467",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508445210260,
+			"name": "[POI] - update",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Pizzaria Updated\",\n\t\"coordinateX\": 25,\n\t\"coordinateY\": 12\n}"
+		},
+		{
+			"id": "8c7e83b8-6b32-d7fc-69b1-87995ef2a4dd",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}/poi/{{poiId}}",
+			"folder": "0d46e447-a3df-21e7-637d-f4678fd0172d",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508260336009,
+			"name": "[POI] - find",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"responses": []
+		},
+		{
+			"id": "dd441de1-0abe-58ef-7da1-c95ff738b74e",
+			"headers": "Content-Type: application/json\n//x-organization-slug: {{organization-slug}}\n//x-application-id: {{application-id}}\n//x-application-key: {{gw-app-key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{host}}/poi",
+			"folder": "30ec7423-4c9e-7173-f301-917ce901d467",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 201\"] = (responseCode.code === 201);\n\nvar poiId = JSON.parse(responseBody).id\npostman.setGlobalVariable(\"poiId\", poiId);\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1508261291632,
+			"name": "[POI] - create",
+			"description": "",
+			"collectionId": "7af4007e-0547-2787-1979-7d8558eee276",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Pizzaria\",\n\t\"coordinateX\": 20,\n\t\"coordinateY\": 10\n}"
+		}
+	]
+}
