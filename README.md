@@ -2,12 +2,19 @@
 
 Desenvolvido para auxiliar na localização de Pontos de Interesse.
 
+## Tecnologias utilizadas ##
+
+- Java
+- Maven
+- PostgreSQL
+- Docker Compose
+
 ## Instalações ##
 O projeto possui as seguintes dependências:
 
 * [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (versão 8)
 * [Maven](https://maven.apache.org/) (versão 3.5 ou maior)
-* [Postgres](https://www.postgresql.org/download/) - banco de dados (versão 9.4);
+* [Docker Compose](https://docs.docker.com/compose/install/) (versão 1.15 ou maior);
 
 ## Configuração do ambiente ##
 
@@ -15,22 +22,28 @@ Após a instalação das dependências, inicie baixando o projeto executando o s
 ```
   git clone https://github.com/ricardofpu/xy-inc.git
 ```
-Dentro do diretório `` xy-inc\src\main\resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
+Dentro do diretório `` xy-inc\xy-inc-web\src\main\resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
-Os demais arquivos listados abaixo, são arquivos de criação da base de dados.
+O arquivo abaixo, são para criação da base de dados.
 ```
-   data.sql ( insert da base inicial )
-   import.sql ( create do banco de dados )
    schema.sql ( create da tabela )
 ```
-## Compilação do Projeto ##
+## Execução ##
 
-Acessar o banco de dados Postgres e criar um database com name ``xyinc``. ( Após o build da aplicação a tabela e os inserts serão executados automaticamente).
+Iniciar o docker compose. Basta acessar a pasta principal do processo e executar o comando:
 
-Executar o seguinte comando dentro da pasta do projeto (\xy-inc) para efetuar o build da aplicação. Este comando irá baixar as dependências do `` pom.xml ``, executar os testes automáticos e irá gerar um arquivo JAR no diretório `` \xy-inc\target ``.
 ```
- mvn clean package
+docker-compose up
 ```
+
+Build no projeto com maven:
+
+```
+mvn clean install
+```
+
+Neste momento é necessário que o docker esteja rodando e que o PostgreSQL seja inicializado para que os testes unitários executem.
+
 ## Iniciando a aplicação ##
 
 Acesse a pasta do projeto e execute o seguinte comando para iniciar a aplicação:
