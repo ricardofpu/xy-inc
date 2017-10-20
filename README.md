@@ -24,7 +24,8 @@ Após a instalação das dependências, inicie baixando o projeto executando o s
 ```
 Dentro do diretório `` xy-inc\xy-inc-web\src\main\resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
-O arquivo abaixo, são para criação da base de dados.
+O arquivo abaixo é utilizado pelo spring para criar a tabela no database:
+
 ```
    schema.sql ( create da tabela )
 ```
@@ -60,59 +61,6 @@ Outra opção para iniciar a aplicação e executar o seguinte comando dentro do
 ```
 ## Utilização do Serviço REST ##
 
-Segue os seguintes exemplos para utilização dos serviços REST
-
-* Listar todos os Pontos de Interesse: 
-     ``
-     GET em http://localhost:8080/poi
-     ``
-* Salvar novo Ponto de Interesse: 
-     ```
-       POST em http://localhost:8080/poi (enviar JSON via Body)
-       Exemplo de requisição HTTP:
-       POST /poi HTTP/1.1
-       Host: localhost:8080
-       Content-Type: application/json
-       Cache-Control: no-cache
-       Postman-Token: 01bfb377-9742-1281-267b-402ebb1d3432
-
-      {
-        "name": "Padaria",
-        "coordinateX": 15,
-        "coordinateY": 6
-      }
-     ```
-* Atualizar Ponto de interesse: 
-     ```
-       PUT em http://localhost:8080/poi (enviar JSON via Body)
-       Exemplo de requisição HTTP:
-       PUT /poi HTTP/1.1
-       Host: localhost:8080
-       Content-Type: application/json
-       Cache-Control: no-cache
-       Postman-Token: 29847fa5-2719-803e-974e-f4dab73ac857
-
-      {
-        "id": 3,
-        "name": "Joalheria",
-        "coordinateX": 15,
-        "coordinateY": 12
-      }
-     ```
-* Buscar Ponto de interesse: 
-     ``
-     GET em http://localhost:8080/poi/{id} retorna um JSON caso o ID exista 
-     ``
-* Deletar Ponto de interesse: 
-    ``
-      DELETE em http://localhost:8080/poi/{id} deleta pelo ID passado na URL
-    ``
-* Buscar Pontos de interesse passando coordenadas X e Y e distancia máxima:
-    ```
-      GET em http://localhost:8080/poi/search?x=20&y=10&dMax=10 
-      (os parametros passados são apenas um exemplo) 
-      Enviar via parametro x, y e dMax
-    ```
-
+Dentro do resource `` xy-inc\docs\postman``, estão a collection e environment para testes da API. Os recursos já estão mapeados.
 
 
