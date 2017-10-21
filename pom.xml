@@ -51,6 +51,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.github.ricardofpu</groupId>
+                <artifactId>global-exception-handler</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>xy-inc-infrastructure</artifactId>
                 <version>${project.version}</version>

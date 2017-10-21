@@ -17,6 +17,7 @@
       <module name="xy-inc" target="1.8" />
       <module name="xy-inc-application" target="1.8" />
       <module name="xy-inc-domain" target="1.8" />
+      <module name="xy-inc-global-exception-handler" target="1.8" />
       <module name="xy-inc-infrastructure" target="1.8" />
       <module name="xy-inc-repository" target="1.8" />
       <module name="xy-inc-web" target="1.8" />

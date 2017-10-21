@@ -8,6 +8,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/xy-inc-global-exception-handler/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-infrastructure/pom.xml" />
       </set>
     </option>

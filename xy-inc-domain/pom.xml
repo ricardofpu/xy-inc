@@ -13,7 +13,6 @@
     <name>xy-inc-domain</name>
 
     <dependencies>
-
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>xy-inc-infrastructure</artifactId>
