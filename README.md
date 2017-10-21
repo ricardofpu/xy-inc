@@ -1,3 +1,5 @@
+[![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/gh/ricardofpu/xy-inc/property-providers?branch=master)
+
 # Projeto XY INC
 
 Desenvolvido para auxiliar na localização de Pontos de Interesse.
