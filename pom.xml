@@ -23,6 +23,7 @@
         <module>xy-inc-application</module>
         <module>xy-inc-repository</module>
         <module>xy-inc-infrastructure</module>
+        <module>xy-inc-global-exception-handler</module>
     </modules>
 
     <properties>
@@ -51,9 +52,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.github.ricardofpu</groupId>
-                <artifactId>global-exception-handler</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>xy-inc-global-exception-handler</artifactId>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>

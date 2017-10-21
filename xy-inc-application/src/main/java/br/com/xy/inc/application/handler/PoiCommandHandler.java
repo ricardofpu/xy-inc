@@ -1,6 +1,5 @@
 package br.com.xy.inc.application.handler;
 
-import br.com.rmb.global.exception.NotFoundException;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
 import br.com.xy.inc.domain.repository.IRepository;
@@ -84,7 +83,7 @@ public class PoiCommandHandler {
     }
 
     private Poi getPoi(Id id) {
-        return Optional.ofNullable(repository.find(id)).orElseThrow(NotFoundException::new);
+        return Optional.ofNullable(repository.find(id)).orElse(null);
     }
 
 }

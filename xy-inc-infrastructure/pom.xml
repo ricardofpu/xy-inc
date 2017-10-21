@@ -16,9 +16,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.ricardofpu</groupId>
-            <artifactId>global-exception-handler</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>xy-inc-global-exception-handler</artifactId>
         </dependency>
 
         <dependency>

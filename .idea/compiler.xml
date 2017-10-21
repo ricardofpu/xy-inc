@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="xy-inc-application" />
         <module name="xy-inc-domain" />
+        <module name="xy-inc-global-exception-handler" />
         <module name="xy-inc-infrastructure" />
         <module name="xy-inc-repository" />
         <module name="xy-inc-web" />
