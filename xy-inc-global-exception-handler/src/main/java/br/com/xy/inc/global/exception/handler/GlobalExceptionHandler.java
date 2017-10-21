@@ -1,5 +1,6 @@
 package br.com.xy.inc.global.exception.handler;
 
+import br.com.xy.inc.global.exception.NotFoundException;
 import br.com.xy.inc.global.exception.error.ExceptionResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
