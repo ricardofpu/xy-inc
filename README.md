@@ -1,4 +1,6 @@
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/gh/ricardofpu/xy-inc/property-providers?branch=master)
+[![Build Status](https://travis-ci.org/ricardofpu/xy-inc.svg?branch=master)](https://travis-ci.org/ricardofpu/xy-inc)
+
 
 # Projeto XY INC
 
