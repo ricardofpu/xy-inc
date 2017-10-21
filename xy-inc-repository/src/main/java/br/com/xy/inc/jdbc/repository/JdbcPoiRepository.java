@@ -37,8 +37,8 @@ public class JdbcPoiRepository implements IRepository {
 
     @Override
     public Integer update(Poi poi) {
-        String sql = String.format("update %s set %s = ?, %s = ?, %s = ? where %s = ?",
-                TABLE_NAME, NAME_COLUMN, COORDINATE_X_COLUMN, COORDINATE_Y_COLUMN, ID_COLUMN);
+        String sql = String.format("update %s set %s = ?, %s = ?, %s = ?, %s = now() where %s = ?",
+                TABLE_NAME, NAME_COLUMN, COORDINATE_X_COLUMN, COORDINATE_Y_COLUMN, UPDATED_AT_COLUMN, ID_COLUMN);
 
         return jdbcTemplate.update(sql, poi.getName().getValue(),
                 poi.getCoordinateX().getValue(), poi.getCoordinateY().getValue(), poi.getId().getValue());
