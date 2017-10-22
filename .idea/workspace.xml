@@ -546,7 +546,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98408000" />
+    <option name="totallyTimeSpent" value="98476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="24" width="1922" height="1089" extended-state="6" />
@@ -989,8 +989,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="699">
-            <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <first_editor relative-caret-position="1060">
+            <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
             <folding />
           </first_editor>
           <second_editor />

@@ -22,14 +22,14 @@ O projeto possui as seguintes dependências:
 
 Após a instalação das dependências, inicie baixando o projeto executando o seguinte comando:
 ```
-  git clone https://github.com/ricardofpu/xy-inc.git
+git clone https://github.com/ricardofpu/xy-inc.git
 ```
 Dentro do diretório `` /xy-inc/xy-inc-web/src/main/resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
 O arquivo abaixo é utilizado pelo spring para criar a tabela no database:
 
 ```
-   schema.sql ( create da tabela )
+schema.sql ( create da tabela )
 ```
 ## Execução ##
 
@@ -51,15 +51,15 @@ Neste momento é necessário que o docker esteja rodando e que o PostgreSQL seja
 
 Acesse a pasta do projeto e execute o seguinte comando para iniciar a aplicação:
 ```
- mvn spring-boot:run
+mvn spring-boot:run
 ```
 Este comando irá realizar o build da aplicação e iniciar o servidor Tomcat. A aplicação ficará disponível na seguinte URL:
 ```
- http://localhost:8080/
+http://localhost:8080/
 ```
 Outra opção para iniciar a aplicação e executar o seguinte comando dentro do diretório do projeto `` /xy-inc/xy-inc-web/target ``:
 ```
-   java -jar xy-inc-1.0.0.jar
+java -jar xy-inc-1.0.0.jar
 ```
 ## Utilização do Serviço REST ##
 
