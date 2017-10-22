@@ -24,7 +24,7 @@ Após a instalação das dependências, inicie baixando o projeto executando o s
 ```
   git clone https://github.com/ricardofpu/xy-inc.git
 ```
-Dentro do diretório `` xy-inc\xy-inc-web\src\main\resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
+Dentro do diretório `` /xy-inc/xy-inc-web/src/main/resources ``, o arquivo `` application.properties `` define as configurações de acesso ao banco, como o datasource para conexão com o banco de dados, usuário e senha.
 
 O arquivo abaixo é utilizado pelo spring para criar a tabela no database:
 
@@ -57,7 +57,7 @@ Este comando irá realizar o build da aplicação e iniciar o servidor Tomcat. A
 ```
  http://localhost:8080/
 ```
-Outra opção para iniciar a aplicação e executar o seguinte comando dentro do diretório do projeto `` \xy-inc\target ``:
+Outra opção para iniciar a aplicação e executar o seguinte comando dentro do diretório do projeto `` /xy-inc/xy-inc-web/target ``:
 ```
    java -jar xy-inc-1.0.0.jar
 ```
@@ -65,4 +65,6 @@ Outra opção para iniciar a aplicação e executar o seguinte comando dentro do
 
 Dentro do resource `` xy-inc\docs\postman``, estão a collection e environment para testes da API. Os recursos já estão mapeados.
 
+## Documentação das API's
 
+Após o build do projeto, é possível acessar a documentação das API's do projeto dentro do diretório `` /xy-inc-web/target/generated-docs/xy-inc-manual.html `` e abrir pelo navegador de internet.
