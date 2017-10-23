@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -42,7 +43,7 @@ public class PoiController {
     }
 
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<PoiRepresentation> createPoi(@RequestBody CreatePoiRequest request) {
+    public ResponseEntity<PoiRepresentation> createPoi(@RequestBody @Valid CreatePoiRequest request) {
         CreatePoi command = request.toCommand();
         Poi poi = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(poi), HttpStatus.CREATED);
@@ -59,7 +60,7 @@ public class PoiController {
     }
 
     @PutMapping(value = "/{id}", consumes = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<PoiRepresentation> updatePoi(@PathVariable("id") String id, @RequestBody UpdatePoiRequest request) {
+    public ResponseEntity<PoiRepresentation> updatePoi(@PathVariable("id") String id, @RequestBody @Valid UpdatePoiRequest request) {
         UpdatePoi command = request.toCommand(id);
         Poi poi = commandHandler.handler(command);
         return new ResponseEntity<>(toRepresentation(poi), HttpStatus.OK);

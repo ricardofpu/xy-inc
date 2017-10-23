@@ -4,11 +4,17 @@ import br.com.xy.inc.application.commands.Commands;
 import br.com.xy.inc.domain.Coordinate;
 import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Name;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
 
 public class UpdatePoiRequest {
 
+    @NotBlank
     private String name;
+    @NotNull
     private Integer coordinateX;
+    @NotNull
     private Integer coordinateY;
 
     public UpdatePoiRequest(){}

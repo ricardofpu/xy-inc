@@ -1,7 +1,8 @@
 package br.com.xy.inc.web.utils;
 
 public class SystemProperties {
-	
+
+	public static final String FIELD_MAY_NOT_BE_NULL = "Este campo não pode ser nulo";
 	public static final String MSG_COORDINATE_NULL = "Coordenadas não podem ter valores negativos.";
 	public static final String MSG_ERROR = "Erro. Contacte o administrador.";
 	public static final String MSG_ERROR_NULL = "Nenhum valor pode ser nulo.";

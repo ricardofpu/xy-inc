@@ -4,6 +4,7 @@ import br.com.xy.inc.domain.Id;
 import br.com.xy.inc.domain.Poi;
 import br.com.xy.inc.domain.repository.IRepository;
 import br.com.xy.inc.global.exception.NotFoundException;
+import br.com.xy.inc.global.exception.error.ResourceValue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,7 +85,7 @@ public class PoiCommandHandler {
     }
 
     private Poi getPoi(Id id) {
-        return Optional.ofNullable(repository.find(id)).orElseThrow(NotFoundException::new);
+        return Optional.ofNullable(repository.find(id)).orElseThrow(() -> new NotFoundException(new ResourceValue(Poi.class, id.getValue())));
     }
 
 }

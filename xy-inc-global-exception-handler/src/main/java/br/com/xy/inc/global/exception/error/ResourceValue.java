@@ -1,9 +1,10 @@
-package br.com.xy.inc.web.utils;
+package br.com.xy.inc.global.exception.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResourceValue {
+
     private final String resource;
     private final String value;
 
@@ -15,10 +16,6 @@ public class ResourceValue {
     public ResourceValue(String resource, String value) {
         this.resource = resource;
         this.value = value;
-    }
-
-    public String toString() {
-        return "ResourceValue[resource='" + this.resource + "', value='" + this.value + '\'' + '}';
     }
 
     public String getResource() {
