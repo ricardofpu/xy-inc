@@ -4,6 +4,7 @@ import br.com.xy.inc.global.exception.BusinessException;
 import br.com.xy.inc.global.exception.NotFoundException;
 import br.com.xy.inc.global.exception.error.ExceptionResponse;
 import br.com.xy.inc.global.exception.error.ResourceValueResponse;
+import br.com.xy.inc.global.exception.utils.ValidationUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -46,7 +47,7 @@ public class GlobalExceptionHandler extends WebMvcConfigurerAdapter {
     @ExceptionHandler({BusinessException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     protected ExceptionResponse handleBusinessException(BusinessException ex) {
-        return new ExceptionResponse();
+        return new ExceptionResponse().fromBusinessExceptionResult(ex);
     }
 
     @ExceptionHandler({NullPointerException.class, IllegalArgumentException.class, IllegalStateException.class})

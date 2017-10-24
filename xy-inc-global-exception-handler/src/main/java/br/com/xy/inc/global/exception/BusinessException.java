@@ -16,7 +16,6 @@ public class BusinessException extends RuntimeException {
 
     private Map<String, List<ErrorCode>> errors;
     private ErrorCode errorCode;
-    private String[] parameters;
 
     public BusinessException(Map<String, List<ErrorCode>> errors) throws RuntimeException {
         super(tryBuildLogMessageAsJson(errors));
@@ -48,10 +47,6 @@ public class BusinessException extends RuntimeException {
 
     public ErrorCode getErrorCode() {
         return this.errorCode;
-    }
-
-    public String[] getParameters() {
-        return this.parameters;
     }
 
     private static String tryBuildLogMessageAsJson(Object object) {
