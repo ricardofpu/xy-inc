@@ -49,7 +49,7 @@ public class Poi {
     public void delete(IRepository repository) {
         Integer updated = repository.delete(this.id);
         if (updated != 1) {
-            throw BusinessException.of("delete.not.allowed", PoiErrors.PoiErrorCode.getDeleteNotAllowed());
+            throw new BusinessException(PoiErrors.PoiErrorCode.getDeleteNotAllowed());
         }
     }
 
@@ -87,7 +87,7 @@ public class Poi {
 
     private void validatePoi(IRepository repository) {
         if (repository.find(id) != null)
-            throw BusinessException.of("exists.poi.id", PoiErrors.PoiErrorCode.getExistsPoiId());
+            throw new BusinessException(PoiErrors.PoiErrorCode.getExistsPoiId());
     }
 
 }

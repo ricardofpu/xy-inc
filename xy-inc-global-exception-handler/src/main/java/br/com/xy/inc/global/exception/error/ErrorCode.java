@@ -3,23 +3,19 @@ package br.com.xy.inc.global.exception.error;
 public class ErrorCode {
 
     private final String code;
-    private final String key;
+    private final String message;
 
-    public ErrorCode(String code, String key) {
+    public ErrorCode(String code, String message) {
         this.code = code;
-        this.key = key;
+        this.message = message;
     }
 
     public String getCode() {
-        return this.code;
+        return code;
     }
 
-    public String getKey() {
-        return this.key;
-    }
-
-    public String toString() {
-        return this.key;
+    public String getMessage() {
+        return message;
     }
 }
 
