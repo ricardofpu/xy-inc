@@ -1,13 +1,19 @@
 package br.com.xy.inc.domain;
 
 import br.com.xy.inc.domain.repository.IRepository;
+import br.com.xy.inc.global.exception.BusinessException;
+import br.com.xy.inc.infrastructure.errors.PoiErrors;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class Poi {
 
-    private Id id;
-    private Name name;
-    private Coordinate coordinateX;
-    private Coordinate coordinateY;
+
+    private @Valid @NotNull Id id;
+    private @Valid @NotNull Name name;
+    private @Valid @NotNull Coordinate coordinateX;
+    private @Valid @NotNull Coordinate coordinateY;
 
     public Poi() {
     }
@@ -30,7 +36,6 @@ public class Poi {
 
     public void create(IRepository repository) {
         this.validatePoi(repository);
-
         repository.save(this);
     }
 
@@ -38,19 +43,13 @@ public class Poi {
         this.name = name;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
-        this.validateUpdate();
-
         repository.update(this);
     }
 
     public void delete(IRepository repository) {
         Integer updated = repository.delete(this.id);
         if (updated != 1) {
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                throw new RuntimeException();
-            }
+            throw BusinessException.of("delete.not.allowed", PoiErrors.PoiErrorCode.getDeleteNotAllowed());
         }
     }
 
@@ -86,33 +85,9 @@ public class Poi {
         this.coordinateY = coordinateY;
     }
 
-    private boolean isEmpty() {
-        return this.name == null || this.name.verifyValue() || this.coordinateX == null || this.coordinateX.verifyValue() ||
-                this.coordinateY == null || this.coordinateY.verifyValue();
-    }
-
-    private boolean isValid() {
-        return this.getCoordinateX().getValue() >= 0 && this.getCoordinateY().getValue() >= 0;
-    }
-
-
     private void validatePoi(IRepository repository) {
-        try {
-            if (repository.find(id) != null) throw new Exception();
-            if (isEmpty()) throw new Exception();
-            if (!isValid()) throw new Exception();
-        } catch (Exception e) {
-            throw new RuntimeException();
-        }
-    }
-
-    private void validateUpdate() {
-        try {
-            if (isEmpty()) throw new Exception();
-            if (!isValid()) throw new Exception();
-        } catch (Exception e) {
-            throw new RuntimeException();
-        }
+        if (repository.find(id) != null)
+            throw BusinessException.of("exists.poi.id", PoiErrors.PoiErrorCode.getExistsPoiId());
     }
 
 }

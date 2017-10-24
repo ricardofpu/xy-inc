@@ -3,19 +3,20 @@ package br.com.xy.inc.web.request;
 import br.com.xy.inc.application.commands.Commands;
 import br.com.xy.inc.domain.Coordinate;
 import br.com.xy.inc.domain.Name;
-import br.com.xy.inc.web.utils.SystemProperties;
+import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 public class CreatePoiRequest {
 
-    @NotNull(message = SystemProperties.FIELD_MAY_NOT_BE_NULL)
+    @NotBlank
     private String name;
 
-    @NotNull
+    @NotNull @Min(0)
     private Integer coordinateX;
 
-    @NotNull
+    @NotNull @Min(0)
     private Integer coordinateY;
 
     public CreatePoiRequest() {

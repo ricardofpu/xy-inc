@@ -21,7 +21,7 @@ public class ValidationExceptionHandler extends WebMvcConfigurerAdapter {
         BindingResult bindingResult = ex.getBindingResult();
         ExceptionResponse response = new ExceptionResponse();
         response.setCode(HttpStatus.BAD_REQUEST.value());
-        response.setFields(ValidationUtil.createErrorsList(bindingResult));
+        response.setFields(ValidationUtil.fromBindingsResult(bindingResult.getFieldErrors()));
         return response;
     }
 }

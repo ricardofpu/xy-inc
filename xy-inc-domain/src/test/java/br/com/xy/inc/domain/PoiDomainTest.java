@@ -1,9 +1,14 @@
 package br.com.xy.inc.domain;
 
 import br.com.xy.inc.domain.repository.IRepository;
+import br.com.xy.inc.global.exception.BusinessException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 
 import static org.mockito.BDDMockito.any;
 import static org.mockito.Mockito.mock;
@@ -23,31 +28,25 @@ public class PoiDomainTest {
         Mockito.verify(repository).save(poi);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failSaveWhenNameIsNull() {
         Poi poi = create();
-        poi.setName(null);
-
-        poi.create(repository);
+        poi.setName(new Name(null));
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failSaveWhenCoordinateXIsNull() {
         Poi poi = create();
-        poi.setCoordinateX(null);
-
-        poi.create(repository);
+        poi.setCoordinateX(new Coordinate(null));
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failSaveWhenCoordinateYIsNull() {
         Poi poi = create();
-        poi.setCoordinateY(null);
-
-        poi.create(repository);
+        poi.setCoordinateY(new Coordinate(null));
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = BusinessException.class)
     public void failSaveWhenExistsId() {
         when(repository.find(any())).thenReturn(create());
 
@@ -58,7 +57,6 @@ public class PoiDomainTest {
 
     @Test
     public void update() {
-        when(repository.save(any())).thenReturn(1);
         when(repository.update(any())).thenReturn(1);
 
         Poi poi = create();
@@ -70,21 +68,21 @@ public class PoiDomainTest {
         Assert.assertEquals(poi.getCoordinateY().getValue().intValue(), 30);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failUpdateWhenNameIsNull() {
         Poi poi = create();
 
         poi.update(new Name(null), new Coordinate(35), new Coordinate(30), repository);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failUpdateWhenCoordinateXIsNull() {
         Poi poi = create();
 
         poi.update(new Name("Lanchonete"), new Coordinate(null), new Coordinate(30), repository);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void failUpdateWhenCoordinateYIsNull() {
         Poi poi = create();
         poi.setCoordinateY(null);
@@ -102,7 +100,7 @@ public class PoiDomainTest {
         Mockito.verify(repository).delete(poi.getId());
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = BusinessException.class)
     public void failDelete() {
         when(repository.delete(any())).thenReturn(0);
 
