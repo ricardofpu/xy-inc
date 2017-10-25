@@ -9,6 +9,7 @@ Desenvolvido para auxiliar na localização de Pontos de Interesse.
 - Java
 - Maven
 - PostgreSQL
+- Spring Framework
 - Docker Compose
 
 ## Instalações ##

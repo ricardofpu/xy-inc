@@ -85,7 +85,8 @@ public class PoiCommandHandler {
     }
 
     private Poi getPoi(Id id) {
-        return Optional.ofNullable(repository.find(id)).orElseThrow(() -> new NotFoundException(new ResourceValue(Poi.class, id.getValue())));
+        return Optional.ofNullable(repository.find(id)).orElseThrow(() ->
+                new NotFoundException(new ResourceValue(Poi.class, id.getValue())));
     }
 
 }

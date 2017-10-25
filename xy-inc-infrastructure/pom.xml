@@ -14,6 +14,10 @@
     <artifactId>xy-inc-infrastructure</artifactId>
     <name>xy-inc-infrastructure</name>
 
+    <properties>
+        <spring.beans.version>5.0.0.RELEASE</spring.beans.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -59,7 +63,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>5.0.0.RELEASE</version>
+            <version>${spring.beans.version}</version>
         </dependency>
 
     </dependencies>
