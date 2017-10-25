@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="541b6097-0077-4f7b-9a20-e803a39209da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/xy-inc-web/src/main/java/br/com/xy/inc/web/utils/SystemProperties.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-application/src/main/java/br/com/xy/inc/application/handler/PoiCommandHandler.java" afterPath="$PROJECT_DIR$/xy-inc-application/src/main/java/br/com/xy/inc/application/handler/PoiCommandHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-domain/pom.xml" afterPath="$PROJECT_DIR$/xy-inc-domain/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-global-exception-handler/pom.xml" afterPath="$PROJECT_DIR$/xy-inc-global-exception-handler/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-global-exception-handler/src/main/java/br/com/xy/inc/global/exception/utils/ValidationUtil.java" afterPath="$PROJECT_DIR$/xy-inc-global-exception-handler/src/main/java/br/com/xy/inc/global/exception/utils/ValidationUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-infrastructure/pom.xml" afterPath="$PROJECT_DIR$/xy-inc-infrastructure/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc.iml" afterPath="$PROJECT_DIR$/xy-inc.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/xy-inc-domain/target/" />
@@ -147,13 +138,13 @@
         <option value="$PROJECT_DIR$/xy-inc-infrastructure/src/main/java/br/com/xy/inc/infrastructure/message/MessageService.java" />
         <option value="$PROJECT_DIR$/xy-inc-domain/src/main/java/br/com/xy/inc/domain/Poi.java" />
         <option value="$PROJECT_DIR$/xy-inc-infrastructure/src/main/java/br/com/xy/inc/infrastructure/errors/PoiErrors.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/xy-inc-global-exception-handler/src/main/java/br/com/xy/inc/global/exception/utils/ValidationUtil.java" />
         <option value="$PROJECT_DIR$/xy-inc-global-exception-handler/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-application/src/main/java/br/com/xy/inc/application/handler/PoiCommandHandler.java" />
         <option value="$PROJECT_DIR$/xy-inc-domain/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-infrastructure/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -535,7 +526,7 @@
       <workItem from="1508861794219" duration="1039000" />
       <workItem from="1508862853369" duration="658000" />
       <workItem from="1508881111674" duration="4341000" />
-      <workItem from="1508889196100" duration="1354000" />
+      <workItem from="1508889196100" duration="1501000" />
     </task>
     <servers />
   </component>
@@ -572,7 +563,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135341000" />
+    <option name="totallyTimeSpent" value="135488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="24" width="1922" height="1089" extended-state="6" />
@@ -721,17 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="89" column="70" lean-forward="false" selection-start-line="89" selection-start-column="70" selection-end-line="89" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="220">
-            <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1065,6 +1045,17 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="599">
+            <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -64,7 +64,7 @@ java -jar xy-inc-1.0.0.jar
 ```
 ## Utilização do Serviço REST ##
 
-Dentro do resource `` xy-inc\docs\postman``, estão a collection e environment para testes da API. Os recursos já estão mapeados.
+Dentro do resource `` xy-inc/docs/postman``, estão a collection e environment para testes da API. Os recursos já estão mapeados.
 
 ## Documentação das API's
 
