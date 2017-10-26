@@ -26,6 +26,16 @@ include::{snippets}/xy-inc-web/target/generated-snippets/create-poi-success/requ
 Response success:
 include::{snippets}/xy-inc-web/target/generated-snippets/create-poi-success/http-response.adoc[]
 
+==== Create Failures
+
+Request fail when mandatory fields not informed
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-create-poi-without-mandatory-fields/http-request.adoc[]
+
+Response:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-create-poi-without-mandatory-fields/http-response.adoc[]
+
 === Update
 
 Request:
@@ -40,6 +50,16 @@ include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/requ
 Response success:
 include::{snippets}/xy-inc-web/target/generated-snippets/update-poi-success/http-response.adoc[]
 
+==== Update Failures
+
+Request fail when Poi not found:
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-update-when-poi-not-found/http-request.adoc[]
+
+Response:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-update-when-poi-not-found/http-response.adoc[]
+
 === Delete
 
 Request:
@@ -50,3 +70,13 @@ include::{snippets}/xy-inc-web/target/generated-snippets/delete-poi-success/path
 
 Response success:
 include::{snippets}/xy-inc-web/target/generated-snippets/delete-poi-success/http-response.adoc[]
+
+==== Delete Failures
+
+Request fail when id not found:
+
+Request:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-delete-when-poi-not-found/http-request.adoc[]
+
+Response:
+include::{snippets}/xy-inc-web/target/generated-snippets/fail-delete-when-poi-not-found/http-response.adoc[]

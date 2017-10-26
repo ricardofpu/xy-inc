@@ -81,6 +81,10 @@ public abstract class ControllerBaseTest {
         return new CreatePoiRequest("Lanchonete", 20, 10);
     }
 
+    protected CreatePoiRequest dummyCreatePoiRequestWithoutMandatoryFields() {
+        return new CreatePoiRequest();
+    }
+
     protected UpdatePoiRequest dummyUpdatePoiRequestSuccess() {
         return new UpdatePoiRequest("Lanchonete Updated", 20, 15);
     }
