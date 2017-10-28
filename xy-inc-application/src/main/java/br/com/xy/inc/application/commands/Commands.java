@@ -21,9 +21,6 @@ public class Commands {
             return id;
         }
 
-        public void setId(Id id) {
-            this.id = id;
-        }
     }
 
     public static class CreatePoi {
@@ -128,7 +125,7 @@ public class Commands {
             return coordinateY;
         }
 
-        public Double getdMax() {
+        public Double getDMax() {
             return dMax;
         }
     }

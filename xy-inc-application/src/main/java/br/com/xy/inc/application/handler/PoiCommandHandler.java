@@ -60,7 +60,7 @@ public class PoiCommandHandler {
 
         poi.update(command.getName(), command.getCoordinateX(), command.getCoordinateY(), repository);
 
-        LOG.debug("Poi updated in data base with id: {}", poi.getId().getValue());
+        LOG.debug("Updated poi in data base with id: {}", poi.getId().getValue());
         return poi;
     }
 
@@ -71,14 +71,14 @@ public class PoiCommandHandler {
 
         poi.delete(repository);
 
-        LOG.debug("Poi deleted in data base with id: {}", poi.getId().getValue());
+        LOG.debug("Deleted poi in data base with id: {}", poi.getId().getValue());
 
     }
 
     public List<Poi> handler(SearchPoi command) {
         LOG.debug("Received command to find poi by between coordinates in data base with values: [{}]", command);
 
-        List<Poi> list = repository.findByBetweenCoordinate(command.getCoordinateX(), command.getCoordinateY(), command.getdMax());
+        List<Poi> list = repository.findByBetweenCoordinate(command.getCoordinateX(), command.getCoordinateY(), command.getDMax());
 
         LOG.debug("Search poi's completed in data base with values: {}", list);
         return list;
