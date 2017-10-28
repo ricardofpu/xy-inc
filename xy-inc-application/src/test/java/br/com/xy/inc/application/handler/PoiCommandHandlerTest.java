@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,6 +31,18 @@ public class PoiCommandHandlerTest {
 
         List<Poi> result = commandHandler.handler(command);
         Assert.assertNotNull(result);
+        verify(repository).findAll();
+    }
+
+    @Test
+    public void findAllWithOneItem() {
+        when(repository.findAll()).thenReturn(Collections.singletonList(create()));
+
+        Commands.GetAllPoi command = new Commands.GetAllPoi();
+
+        List<Poi> result = commandHandler.handler(command);
+        Assert.assertNotNull(result);
+        Assert.assertEquals(result.size(), 1);
         verify(repository).findAll();
     }
 
