@@ -5,9 +5,7 @@ import br.com.xy.inc.global.exception.BusinessException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
 import static org.mockito.BDDMockito.any;
@@ -63,9 +61,9 @@ public class PoiDomainTest {
 
         poi.update(new Name("Lanchonete"), new Coordinate(35), new Coordinate(30), repository);
         Mockito.verify(repository).update(poi);
-        Assert.assertEquals(poi.getName().getValue(), "Lanchonete");
-        Assert.assertEquals(poi.getCoordinateX().getValue().intValue(), 35);
-        Assert.assertEquals(poi.getCoordinateY().getValue().intValue(), 30);
+        Assert.assertEquals("Lanchonete", poi.getName().getValue());
+        Assert.assertEquals(35, poi.getCoordinateX().getValue().intValue());
+        Assert.assertEquals(30, poi.getCoordinateY().getValue().intValue());
     }
 
     @Test(expected = ConstraintViolationException.class)

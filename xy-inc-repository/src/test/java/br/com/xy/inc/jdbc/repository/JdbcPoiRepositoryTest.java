@@ -22,38 +22,38 @@ public class JdbcPoiRepositoryTest extends RepositoryBaseTest {
         Poi poi = create();
 
         Integer saved = repository.save(poi);
-        Assert.assertEquals(saved.intValue(), 1);
+        Assert.assertEquals(1, saved.intValue());
     }
 
     @Test
     public void findPoi() {
-        Poi poi  = create();
+        Poi poi = create();
 
         Integer saved = repository.save(poi);
-        Assert.assertEquals(saved.intValue(), 1);
+        Assert.assertEquals(1, saved.intValue());
 
         Poi selected = repository.find(poi.getId());
-        Assert.assertEquals(selected.getId().getValue(), poi.getId().getValue());
-        Assert.assertEquals(selected.getName().getValue(), poi.getName().getValue());
-        Assert.assertEquals(selected.getCoordinateX().getValue(), poi.getCoordinateX().getValue());
-        Assert.assertEquals(selected.getCoordinateY().getValue(), poi.getCoordinateY().getValue());
+        Assert.assertEquals(poi.getId().getValue(), selected.getId().getValue());
+        Assert.assertEquals(poi.getName().getValue(), selected.getName().getValue());
+        Assert.assertEquals(poi.getCoordinateX().getValue(), selected.getCoordinateX().getValue());
+        Assert.assertEquals(poi.getCoordinateY().getValue(), selected.getCoordinateY().getValue());
     }
 
     @Test
     public void findAll() {
-        Poi poi  = create();
+        Poi poi = create();
 
         Integer saved = repository.save(poi);
-        Assert.assertEquals(saved.intValue(), 1);
+        Assert.assertEquals(1, saved.intValue());
 
         List<Poi> list = repository.findAll();
         Assert.assertNotNull(list);
 
         Poi selected = list.stream().filter(p -> Objects.equals(p.getId().getValue(), poi.getId().getValue())).findFirst().get();
-        Assert.assertEquals(selected.getId().getValue(), poi.getId().getValue());
-        Assert.assertEquals(selected.getName().getValue(), poi.getName().getValue());
-        Assert.assertEquals(selected.getCoordinateX().getValue(), poi.getCoordinateX().getValue());
-        Assert.assertEquals(selected.getCoordinateY().getValue(), poi.getCoordinateY().getValue());
+        Assert.assertEquals(poi.getId().getValue(), selected.getId().getValue());
+        Assert.assertEquals(poi.getName().getValue(), selected.getName().getValue());
+        Assert.assertEquals(poi.getCoordinateX().getValue(), selected.getCoordinateX().getValue());
+        Assert.assertEquals(poi.getCoordinateY().getValue(), selected.getCoordinateY().getValue());
     }
 
     @Test
@@ -61,20 +61,20 @@ public class JdbcPoiRepositoryTest extends RepositoryBaseTest {
         Poi poi = create();
 
         Integer saved = repository.save(poi);
-        Assert.assertEquals(saved.intValue(), 1);
+        Assert.assertEquals(1, saved.intValue());
 
         poi.setName(new Name("Lunch Updated"));
         poi.setCoordinateX(new Coordinate(30));
         poi.setCoordinateY(new Coordinate(25));
 
         Integer updated = repository.update(poi);
-        Assert.assertEquals(updated.intValue(), 1);
+        Assert.assertEquals(1, updated.intValue());
 
         Poi selected = repository.find(poi.getId());
-        Assert.assertEquals(selected.getId().getValue(), poi.getId().getValue());
-        Assert.assertEquals(selected.getName().getValue(), poi.getName().getValue());
-        Assert.assertEquals(selected.getCoordinateX().getValue(), poi.getCoordinateX().getValue());
-        Assert.assertEquals(selected.getCoordinateY().getValue(), poi.getCoordinateY().getValue());
+        Assert.assertEquals(poi.getId().getValue(), selected.getId().getValue());
+        Assert.assertEquals(poi.getName().getValue(), selected.getName().getValue());
+        Assert.assertEquals(poi.getCoordinateX().getValue(), selected.getCoordinateX().getValue());
+        Assert.assertEquals(poi.getCoordinateY().getValue(), selected.getCoordinateY().getValue());
 
     }
 
@@ -83,10 +83,10 @@ public class JdbcPoiRepositoryTest extends RepositoryBaseTest {
         Poi poi = create();
 
         Integer saved = repository.save(poi);
-        Assert.assertEquals(saved.intValue(), 1);
+        Assert.assertEquals(1, saved.intValue());
 
         Integer deleted = repository.delete(poi.getId());
-        Assert.assertEquals(deleted.intValue(), 1);
+        Assert.assertEquals(1, deleted.intValue());
 
         Poi selected = repository.find(poi.getId());
         Assert.assertNull(selected);
