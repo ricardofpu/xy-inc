@@ -1,6 +1,6 @@
-[![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/gh/ricardofpu/xy-inc/property-providers?branch=master)
-
 # Projeto XY INC
+[![Build Status](https://travis-ci.org/ricardofpu/xy-inc.svg?branch=master)](https://travis-ci.org/ricardofpu/xy-inc)
+[![codecov](https://codecov.io/gh/ricardofpu/xy-inc/branch/master/graph/badge.svg)](https://codecov.io/gh/ricardofpu/xy-inc)
 
 Desenvolvido para auxiliar na localização de Pontos de Interesse.
 
