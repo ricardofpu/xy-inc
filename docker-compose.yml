@@ -1,11 +1,13 @@
 version: '2'
 services:
  postgres:
-   image: postgres:9.4
+   image: postgres:9.6
    ports:
      - "5432:5432"
    environment:
      - POSTGRES_DB=xy_inc
-     - POSTGRES_USER=postgres
-     - POSTGRES_PASSWORD=root
+     - POSTGRES_USER=xy_inc
+     - POSTGRES_PASSWORD=xy_inc
      - MAX_CONNECTIONS=300
+   volumes:
+     - ./scripts/docker-compose-postgres.sql:/docker-entrypoint-initdb.d/setup.sql
