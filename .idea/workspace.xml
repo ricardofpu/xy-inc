@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="541b6097-0077-4f7b-9a20-e803a39209da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-repository/src/main/resources/application-local.properties" afterPath="$PROJECT_DIR$/xy-inc-repository/src/main/resources/application-local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-repository/src/test/java/br/com/xy/inc/jdbc/repository/config/RepositoryBaseTest.java" afterPath="$PROJECT_DIR$/xy-inc-repository/src/test/java/br/com/xy/inc/jdbc/repository/config/RepositoryBaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-repository/src/test/resources/application-test.properties" afterPath="$PROJECT_DIR$/xy-inc-repository/src/test/resources/application-test.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-web/src/main/resources/application-local.properties" afterPath="$PROJECT_DIR$/xy-inc-web/src/main/resources/application-local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xy-inc-web/src/test/resources/application-test.properties" afterPath="$PROJECT_DIR$/xy-inc-web/src/test/resources/application-test.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/xy-inc-domain/target/" />
@@ -120,7 +116,6 @@
         <option value="$PROJECT_DIR$/xy-inc-global-exception-handler/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-domain/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-infrastructure/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/xy-inc-web/src/test/java/br/com/xy/inc/web/ControllerBaseTest.java" />
         <option value="$PROJECT_DIR$/rest-docs/asciidoc/xy-inc-manual.adoc" />
         <option value="$PROJECT_DIR$/xy-inc-application/src/test/java/br/com/xy/inc/application/handler/PoiCommandHandlerTest.java" />
@@ -150,6 +145,7 @@
         <option value="$PROJECT_DIR$/xy-inc-web/src/main/resources/application-local.properties" />
         <option value="$PROJECT_DIR$/xy-inc-web/src/test/resources/application-test.properties" />
         <option value="$PROJECT_DIR$/xy-inc-repository/src/test/java/br/com/xy/inc/jdbc/repository/config/RepositoryBaseTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -585,7 +581,7 @@
       <workItem from="1536756114741" duration="66000" />
       <workItem from="1537051057912" duration="180000" />
       <workItem from="1537051488265" duration="3357000" />
-      <workItem from="1537980763860" duration="2131000" />
+      <workItem from="1537980763860" duration="2585000" />
     </task>
     <servers />
   </component>
@@ -622,7 +618,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169590000" />
+    <option name="totallyTimeSpent" value="170044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
@@ -892,14 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="129" column="4" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="141" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xy-inc-infrastructure/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-654">
@@ -933,6 +921,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-417">
           <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -998,22 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/docker-compose-postgres.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xy-inc-repository/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1034,14 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1114,6 +1079,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/docker-compose-postgres.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="41" />
           <folding />
         </state>
       </provider>
