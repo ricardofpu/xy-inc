@@ -12,6 +12,7 @@ install: true
 before_script:
   - psql -c 'create database xy_inc;' -U postgres
   - psql -c "CREATE USER xy_inc WITH PASSWORD 'xy_inc';" -U postgres
+  - psql -U xy_inc -d xy_inc -a -f ./scripts/docker-compose-postgres.sql
 
 script:
   - mvn clean install
