@@ -5,21 +5,19 @@ jdk:
 sudo: true
 
 services:
-  - docker
+  - postgresql
 
 install: true
 
 before_script:
-  - sudo service postgresql stop
+  - psql -c 'create database xy_inc;' -U postgres
+  - psql -c "CREATE USER xy_inc WITH PASSWORD 'xy_inc';" -U postgres
 
 script:
-  - docker-compose up --build -d postgres
-  - docker-compose ps
   - mvn clean install
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker-compose down
 
 cache:
   directories:
